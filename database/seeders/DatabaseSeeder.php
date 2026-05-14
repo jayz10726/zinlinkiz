@@ -19,7 +19,7 @@ public function run(): void
         ['email' => 'test@example.com'],
         [
             'name'              => 'Test User',
-            'email_verified_at' => now('admin@zinlinktech.com'),
+            'email_verified_at' => now(),
             'password'          => bcrypt('password'),
             'remember_token'    => \Str::random(10),
         ]

@@ -15,11 +15,11 @@ class AdminUserSeeder extends Seeder
             [
                 'name'     => 'zinlinktech Admin',
                 'email'    => 'admin@zinlinktech.com',
-                'password' => Hash::make('Admin@1234'),
+                'password' => Hash::make('caston@2030@!!'),
                 'is_admin' => true,
             ]
         );
 
-        $this->command->info('✅ Admin user created: admin@zinlinktech.com / Admin@1234');
+        $this->command->info('✅ Admin user created: admin@zinlinktech.com / caston@2030@!!');
     }
 }
