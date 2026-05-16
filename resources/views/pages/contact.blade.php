@@ -126,18 +126,68 @@
 </section>
 
 {{-- Map-style section --}}
-<section class="bg-slate-100 py-10 border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-        <p class="text-slate-500 text-sm font-medium mb-2">📍 Find us on the map</p>
-        <p class="text-slate-700 font-semibold">Kaimosi, Kenya</p>
-        <p class="text-slate-500 text-sm mt-1">Near Kencom Bus Stop · Open Mon–Sat 8am–7pm, Sun 10am–4pm</p>
-        <div class="mt-6 bg-slate-200 rounded-2xl h-48 flex items-center justify-center border border-slate-300 max-w-3xl mx-auto">
-            <div class="text-center text-slate-500">
-                <span class="text-4xl block mb-2">🗺️</span>
-                <p class="text-sm font-medium">Kaimosi, Kenya</p>
-                <a href="https://maps.google.com/?q=Kaimosi " target="_blank"
-                   class="text-blue-600 hover:underline text-xs mt-1 inline-block">Open in Google Maps →</a>
+<section class="bg-gradient-to-b from-slate-50 to-slate-100 py-16 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4">
+
+        <!-- Heading -->
+        <div class="text-center mb-10">
+            <p class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 bg-emerald-100 px-4 py-1 rounded-full">
+                📍 Visit Our Location
+            </p>
+
+            <h2 class="mt-4 text-3xl md:text-4xl font-bold text-slate-800">
+                Find Us in Kaimosi, Kenya
+            </h2>
+
+            <p class="mt-3 text-slate-500 max-w-2xl mx-auto">
+                Conveniently located near Kencom Bus Stop. Easily accessible and open throughout the week.
+            </p>
+        </div>
+
+        <!-- Map Container -->
+        <div class="max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-slate-200 bg-white">
+
+            <!-- Real Embedded Google Map -->
+            <div class="relative w-full h-[420px]">
+                <iframe
+                    src="https://maps.google.com/maps?q=Kaimosi%2C%20Kenya&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    class="w-full h-full"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+                <!-- Floating Location Card -->
+                <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-5 max-w-sm border border-slate-200">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-emerald-100 text-emerald-600 p-3 rounded-xl text-2xl">
+                            📍
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-800">
+                                Kaimosi, Kenya
+                            </h3>
+
+                            <p class="text-sm text-slate-500 mt-1">
+                                Near Kencom Bus Stop
+                            </p>
+
+                            <div class="mt-3 text-sm text-slate-600">
+                                <p><span class="font-semibold">Mon–Sat:</span> 8am – 7pm</p>
+                                <p><span class="font-semibold">Sunday:</span> 10am – 4pm</p>
+                            </div>
+
+                            <a href="https://maps.google.com/?q=Kaimosi,Kenya"
+                               target="_blank"
+                               class="inline-flex items-center gap-2 mt-4 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-4 py-2 rounded-full transition duration-300">
+                                Open Full Map →
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 </section>

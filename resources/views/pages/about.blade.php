@@ -93,71 +93,85 @@
         <h2 class="font-display font-bold text-3xl text-slate-900">Meet Our Team</h2>
         <p class="text-slate-500 mt-2 text-sm">The experts who make zinlinktech possible</p>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
-        @foreach($team as $member)
-        <div class="group overflow-hidden rounded-3xl bg-white border border-slate-200 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
-            <div class="p-8 text-center">
+@foreach($team as $member)
+<div class="group overflow-hidden rounded-3xl border border-white/20
+            bg-gradient-to-br from-blue-50 via-sky-50 to-indigo-100
+            shadow-md transition-all duration-500
+            hover:-translate-y-2 hover:shadow-2xl hover:from-blue-100 hover:to-indigo-200">
 
-                {{-- Photo / Avatar --}}
-                <div class="relative mx-auto mb-6 flex justify-center">
+    <div class="p-8 text-center">
 
-                    @if($member->photo)
-                        <div class="h-40 w-40 overflow-hidden rounded-3xl shadow-xl border-4 border-slate-100">
-                            <img src="{{ asset('storage/'.$member->photo) }}"
-                                 alt="{{ $member->name }}"
-                                 class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105">
-                        </div>
-                    @else
-                        <div class="flex h-40 w-40 items-center justify-center rounded-3xl bg-gradient-to-br from-blue-500 to-indigo-600 text-5xl font-black text-white shadow-xl">
-                            {{ $member->initials ?: strtoupper(substr($member->name,0,2)) }}
-                        </div>
-                    @endif
+        {{-- Photo / Avatar --}}
+        <div class="relative mx-auto mb-6 flex justify-center">
 
+            @if($member->photo)
+                <div class="h-40 w-40 overflow-hidden rounded-3xl border-4 border-white shadow-xl">
+                    <img src="{{ asset('storage/'.$member->photo) }}"
+                         alt="{{ $member->name }}"
+                         class="h-full w-full object-cover object-top
+                                transition duration-500 group-hover:scale-110">
                 </div>
+            @else
+                <div class="flex h-40 w-40 items-center justify-center rounded-3xl
+                            bg-gradient-to-br from-blue-600 via-sky-600 to-indigo-600
+                            text-5xl font-black text-white shadow-xl">
+                    {{ $member->initials ?: strtoupper(substr($member->name,0,2)) }}
+                </div>
+            @endif
 
-                {{-- Name --}}
-                <h3 class="text-2xl font-bold text-slate-900">
-                    {{ $member->name }}
-                </h3>
-
-                {{-- Role --}}
-                <p class="mt-2 text-sm font-bold uppercase tracking-[0.2em] text-blue-600">
-                    {{ $member->role }}
-                </p>
-
-                {{-- Bio --}}
-                @if($member->bio)
-                    <p class="mt-5 text-sm leading-relaxed text-slate-600">
-                        {{ $member->bio }}
-                    </p>
-                @endif
-
-                {{-- Contact --}}
-                @if($member->phone || $member->email)
-                    <div class="mt-6 space-y-3 border-t border-slate-100 pt-5">
-
-                        @if($member->phone)
-                            <a href="tel:{{ $member->phone }}"
-                               class="flex items-center justify-center gap-2 rounded-2xl bg-slate-100 px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-blue-600 hover:text-white">
-                                📞 {{ $member->phone }}
-                            </a>
-                        @endif
-
-                        @if($member->email)
-                            <a href="mailto:{{ $member->email }}"
-                               class="flex items-center justify-center gap-2 rounded-2xl bg-slate-100 px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-indigo-600 hover:text-white">
-                                ✉️ {{ $member->email }}
-                            </a>
-                        @endif
-
-                    </div>
-                @endif
-
-            </div>
         </div>
-    @endforeach
+
+        {{-- Name --}}
+        <h3 class="text-2xl font-bold text-slate-900 tracking-tight">
+            {{ $member->name }}
+        </h3>
+
+        {{-- Role --}}
+        <p class="mt-2 text-sm font-semibold uppercase tracking-widest text-indigo-600">
+            {{ $member->role }}
+        </p>
+
+        {{-- Bio --}}
+        @if($member->bio)
+            <p class="mt-5 text-sm leading-relaxed text-slate-600">
+                {{ $member->bio }}
+            </p>
+        @endif
+
+        {{-- Contact --}}
+        @if($member->phone || $member->email)
+        <div class="mt-6 space-y-3 border-t border-white/30 pt-5">
+
+            @if($member->phone)
+                <a href="tel:{{ $member->phone }}"
+                   class="flex items-center justify-center gap-2 rounded-2xl
+                          bg-white/70 backdrop-blur px-4 py-3 text-sm font-medium
+                          text-slate-700 shadow-sm transition
+                          hover:bg-blue-600 hover:text-white">
+                    📞 {{ $member->phone }}
+                </a>
+            @endif
+
+            @if($member->email)
+                <a href="mailto:{{ $member->email }}"
+                   class="flex items-center justify-center gap-2 rounded-2xl
+                          bg-white/70 backdrop-blur px-4 py-3 text-sm font-medium
+                          text-slate-700 shadow-sm transition
+                          hover:bg-indigo-600 hover:text-white">
+                    ✉️ {{ $member->email }}
+                </a>
+            @endif
+
+        </div>
+        @endif
+
     </div>
+</div>
+@endforeach
+
+</div>
 </section>
 @endif
 
@@ -172,5 +186,3 @@
         </div>
     </div>
 </section>
-
-@endsection
