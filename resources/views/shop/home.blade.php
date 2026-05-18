@@ -4,14 +4,7 @@
 @section('content')
 
 {{-- ══════════════════════ HERO CAROUSEL ══════════════════════ --}}
-{{--
-    Mobile fixes:
-    - Fixed height changed to min-height with clamp so it doesn't clip on small phones
-    - Slide content text scales down with clamp()
-    - Stats row scrolls horizontally on mobile (no wrapping, no overflow clip)
-    - Buttons stack on xs, row on sm+
-    - Prev/next arrows hidden on very small screens (swipe handles it)
---}}
+
 <section class="relative overflow-hidden" style="height: clamp(420px, 60vw, 580px);">
 
     <div id="carousel-track" class="flex h-full transition-transform duration-700 ease-in-out" style="width: 300%;">
